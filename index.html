@@ -424,19 +424,25 @@ input[type=checkbox]:checked::after{content:"";position:absolute;left:7px;top:3p
 .disney-head .dh-ico svg{display:block}
 .disney-head h3{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:21px;letter-spacing:.05em;text-transform:uppercase;margin:0;line-height:1.1}
 .disney-head p{margin:4px 0 0;font-size:13px;color:var(--soft);line-height:1.55}
+.disney-count{display:inline-block;font-family:"Barlow Condensed",sans-serif;font-size:13px;font-weight:700;letter-spacing:.05em;color:var(--ink);border:1.5px solid var(--ink);border-radius:100px;padding:1px 9px;margin-left:8px;vertical-align:3px;white-space:nowrap}
+.disney-count.full{background:var(--done);border-color:var(--done);color:#fff}
 .rides{list-style:none;margin:8px 0 0;padding:0}
-.ride{position:relative;display:grid;grid-template-columns:96px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.ride{position:relative;display:block;padding:14px 0;border-bottom:1px solid var(--line)}
+.ride.done .body b{text-decoration:line-through;color:var(--soft)}
+.rhead{display:flex;align-items:center;gap:8px;margin:0 0 6px}
+.ride-group{display:block;margin:0;padding:12px 0 4px 10px;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);border-bottom:1px solid var(--line);border-left:4px solid var(--gc)}
+.ride-group:first-child{padding-top:4px}
+.ride-group.must{--gc:#C0392B}
+.ride-group.thrill{--gc:#7A3AA2}
+.ride-group.fam{--gc:#1E7A4F}
 .ride:last-child{border-bottom:0}
-.ride .land{font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);padding-top:3px;line-height:1.4}
+.ride .land{font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);line-height:1.4}
 .ride .links{display:flex;flex-wrap:wrap;gap:16px;margin-top:8px}
 .ride .links .more{margin-top:0}
 .tag.must{color:#C0392B; background: rgba(192, 57, 43, 0.06);}
 .tag.thrill{color:#7A3AA2; background: rgba(122, 58, 162, 0.06);}
 .tag.fam{color:#1E7A4F; background: rgba(30, 122, 79, 0.06);}
-@media (max-width:560px){
-  .ride{grid-template-columns:1fr;gap:6px}
-  .ride .land{padding-top:0}
-}
+
 
 .tools{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
 button.util{font-family:"Barlow Condensed",sans-serif;font-size:15px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:none;border:2px solid var(--ink);color:var(--ink);padding:8px 18px;border-radius:6px;cursor:pointer}
@@ -655,15 +661,15 @@ button.util:hover{background:var(--ink);color:var(--paper)}
     </ul>
     <div class="disney">
       <div class="disney-head">
-        <span class="dh-ico" aria-hidden="true"><svg viewBox="0 0 48 48" width="30" height="30" xmlns="http://www.w3.org/2000/svg"><circle cx="13" cy="12" r="8.5" fill="#17181d"/><circle cx="35" cy="12" r="8.5" fill="#17181d"/><circle cx="24" cy="27" r="16" fill="#17181d"/><path d="M14 23c0-6 4.5-10 10-10s10 4 10 10c0 7-4.5 11.5-10 11.5S14 30 14 23z" fill="#f6d8a8"/><ellipse cx="18.5" cy="25" rx="2.3" ry="3.4" fill="#17181d"/><ellipse cx="29.5" cy="25" rx="2.3" ry="3.4" fill="#17181d"/><ellipse cx="24" cy="30" rx="3.2" ry="2.6" fill="#17181d"/><path d="M16 35.5q8 5.5 16 0" stroke="#17181d" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg><svg viewBox="0 0 48 48" width="30" height="30" xmlns="http://www.w3.org/2000/svg"><circle cx="13" cy="14" r="8.5" fill="#17181d"/><circle cx="35" cy="14" r="8.5" fill="#17181d"/><circle cx="24" cy="29" r="16" fill="#17181d"/><path d="M14 25c0-6 4.5-10 10-10s10 4 10 10c0 7-4.5 11.5-10 11.5S14 32 14 25z" fill="#f6d8a8"/><ellipse cx="18.5" cy="27" rx="2.3" ry="3.4" fill="#17181d"/><ellipse cx="29.5" cy="27" rx="2.3" ry="3.4" fill="#17181d"/><ellipse cx="24" cy="32" rx="3.2" ry="2.6" fill="#17181d"/><path d="M16 37.5q8 5.5 16 0" stroke="#17181d" stroke-width="1.7" fill="none" stroke-linecap="round"/><g fill="#e23b54"><circle cx="9" cy="5.5" r="5.2"/><circle cx="21" cy="5.5" r="5.2"/><circle cx="15" cy="5.5" r="2.8"/></g><g fill="#fff"><circle cx="9" cy="5.5" r="1.1"/><circle cx="21" cy="5.5" r="1.1"/><circle cx="15" cy="5.5" r="1"/></g></svg></span>
+        <span class="dh-ico" aria-hidden="true"><svg viewBox="0 0 100 100" width="34" height="34" xmlns="http://www.w3.org/2000/svg"><circle cx="23" cy="24" r="17" fill="#14151a"/><circle cx="77" cy="24" r="17" fill="#14151a"/><circle cx="50" cy="60" r="36" fill="#14151a"/><path d="M19 58c0-17 12-29 31-29s31 12 31 29c0 21-12 33-31 33S19 79 19 58z" fill="#f6d7a8"/><ellipse cx="37" cy="52" rx="5" ry="7.5" fill="#14151a"/><ellipse cx="63" cy="52" rx="5" ry="7.5" fill="#14151a"/><circle cx="39" cy="49.5" r="1.6" fill="#fff"/><circle cx="65" cy="49.5" r="1.6" fill="#fff"/><ellipse cx="50" cy="66" rx="9" ry="6.5" fill="#14151a"/><path d="M29 79 Q50 92 71 79" stroke="#14151a" stroke-width="3.5" fill="none" stroke-linecap="round"/></svg><svg viewBox="0 0 100 100" width="34" height="34" xmlns="http://www.w3.org/2000/svg"><circle cx="23" cy="24" r="17" fill="#14151a"/><circle cx="77" cy="24" r="17" fill="#14151a"/><circle cx="50" cy="60" r="36" fill="#14151a"/><path d="M19 58c0-17 12-29 31-29s31 12 31 29c0 21-12 33-31 33S19 79 19 58z" fill="#f6d7a8"/><ellipse cx="37" cy="52" rx="5" ry="7.5" fill="#14151a"/><ellipse cx="63" cy="52" rx="5" ry="7.5" fill="#14151a"/><path d="M33 44l-4-5M41 44l4-5M59 44l-4-5M67 44l4-5" stroke="#14151a" stroke-width="2" stroke-linecap="round"/><circle cx="39" cy="49.5" r="1.6" fill="#fff"/><circle cx="65" cy="49.5" r="1.6" fill="#fff"/><ellipse cx="50" cy="66" rx="9" ry="6.5" fill="#14151a"/><path d="M29 79 Q50 92 71 79" stroke="#14151a" stroke-width="3.5" fill="none" stroke-linecap="round"/><circle cx="29" cy="74" r="4.5" fill="#f7a8b8" opacity=".85"/><circle cx="71" cy="74" r="4.5" fill="#f7a8b8" opacity=".85"/><g fill="#e23b54"><circle cx="33" cy="15" r="12"/><circle cx="61" cy="15" r="12"/><circle cx="47" cy="15" r="7.5"/></g><g fill="#fff"><circle cx="33" cy="15" r="2.6"/><circle cx="61" cy="15" r="2.6"/><circle cx="47" cy="15" r="2.2"/></g></svg></span>
         <div>
-          <h3>Grupo 2 · Disney — brinquedo a brinquedo</h3>
+          <h3>Grupo 2 · Disney — brinquedo a brinquedo <span class="disney-count" id="disneyCount">0/22 · 0%</span></h3>
           <p>O que fazer dentro da Disney, atração por atração, com o link do site oficial e um link de fotos. Dica: baixe o app <b>Disneyland Paris</b> para ver filas ao vivo e reservar horários.</p>
         </div>
       </div>
-      <ul class="rides">
-        <li class="ride">
-          <span class="land">Frontierland</span>
+      <ul class="rides"><li class="ride-group must">Imperdíveis</li>
+<li class="ride">
+          <span class="rhead"><span class="tickwrap"><input type="checkbox" id="dr0"></span><span class="land">Frontierland</span></span>
           <span class="body">
             <span>
               <b>Big Thunder Mountain<span class="tag must">imperdível</span></b>
@@ -676,22 +682,8 @@ button.util:hover{background:var(--ink);color:var(--paper)}
             <a class="ph" href="https://www.google.com/search?tbm=isch&q=Big%20Thunder%20Mountain%20Disneyland%20Paris" target="_blank" aria-label="Fotos de Big Thunder Mountain"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Big_Thunder_Mountain_Railroad_2.jpg/500px-Big_Thunder_Mountain_Railroad_2.jpg" alt="" loading="lazy"><span>Fotos</span></a>
           </span>
         </li>
-        <li class="ride">
-          <span class="land">Frontierland</span>
-          <span class="body">
-            <span>
-              <b>Phantom Manor<span class="tag fam">família</span></b>
-              <p>Mansão mal-assombrada com história própria (a família Ravenswood) e trilha sonora arrepiante.</p>
-              <span class="links">
-                <a class="more" href="https://www.disneylandparis.com/en-int/attractions/disneyland-park/phantom-manor/" target="_blank">Site oficial</a>
-                <a class="more" href="https://www.google.com/search?tbm=isch&q=Phantom%20Manor%20Disneyland%20Paris" target="_blank">Fotos</a>
-              </span>
-            </span>
-            <a class="ph" href="https://www.google.com/search?tbm=isch&q=Phantom%20Manor%20Disneyland%20Paris" target="_blank" aria-label="Fotos de Phantom Manor"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/Phantom_Manor_View.jpg/500px-Phantom_Manor_View.jpg" alt="" loading="lazy"><span>Fotos</span></a>
-          </span>
-        </li>
-        <li class="ride">
-          <span class="land">Adventureland</span>
+<li class="ride">
+          <span class="rhead"><span class="tickwrap"><input type="checkbox" id="dr1"></span><span class="land">Adventureland</span></span>
           <span class="body">
             <span>
               <b>Pirates of the Caribbean<span class="tag must">imperdível</span></b>
@@ -704,22 +696,8 @@ button.util:hover{background:var(--ink);color:var(--paper)}
             <a class="ph" href="https://www.google.com/search?tbm=isch&q=Pirates%20of%20the%20Caribbean%20Disneyland%20Paris" target="_blank" aria-label="Fotos de Pirates of the Caribbean"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Pirates_of_the_Caribbean_Disneyland_Paris.JPG" alt="" loading="lazy"><span>Fotos</span></a>
           </span>
         </li>
-        <li class="ride">
-          <span class="land">Adventureland</span>
-          <span class="body">
-            <span>
-              <b>Indiana Jones™ and the Temple of Peril<span class="tag thrill">radical</span></b>
-              <p>Montanha-russa com loop a céu aberto inspirada no templo de Indy. Curta, mas com adrenalina.</p>
-              <span class="links">
-                <a class="more" href="https://www.disneylandparis.com/en-int/attractions/disneyland-park/indiana-jones-and-the-temple-of-peril/" target="_blank">Site oficial</a>
-                <a class="more" href="https://www.google.com/search?tbm=isch&q=Indiana%20Jones%20Temple%20of%20Peril%20Disneyland%20Paris" target="_blank">Fotos</a>
-              </span>
-            </span>
-            <a class="ph" href="https://www.google.com/search?tbm=isch&q=Indiana%20Jones%20Temple%20of%20Peril%20Disneyland%20Paris" target="_blank" aria-label="Fotos de Indiana Jones and the Temple of Peril"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/IndianaJones-DLRP-enter.JPG/500px-IndianaJones-DLRP-enter.JPG" alt="" loading="lazy"><span>Fotos</span></a>
-          </span>
-        </li>
-        <li class="ride">
-          <span class="land">Fantasyland</span>
+<li class="ride">
+          <span class="rhead"><span class="tickwrap"><input type="checkbox" id="dr2"></span><span class="land">Fantasyland</span></span>
           <span class="body">
             <span>
               <b>Sleeping Beauty Castle<span class="tag must">imperdível</span></b>
@@ -732,8 +710,8 @@ button.util:hover{background:var(--ink);color:var(--paper)}
             <a class="ph" href="https://www.google.com/search?tbm=isch&q=Sleeping%20Beauty%20Castle%20Disneyland%20Paris" target="_blank" aria-label="Fotos do Castelo da Bela Adormecida"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/88/Sleeping_Beauty_Castle%2C_Disneyland%2C_Paris.jpg/500px-Sleeping_Beauty_Castle%2C_Disneyland%2C_Paris.jpg" alt="" loading="lazy"><span>Fotos</span></a>
           </span>
         </li>
-        <li class="ride">
-          <span class="land">Fantasyland</span>
+<li class="ride">
+          <span class="rhead"><span class="tickwrap"><input type="checkbox" id="dr3"></span><span class="land">Fantasyland</span></span>
           <span class="body">
             <span>
               <b>Peter Pan's Flight<span class="tag must">imperdível</span></b>
@@ -746,92 +724,8 @@ button.util:hover{background:var(--ink);color:var(--paper)}
             <a class="ph" href="https://www.google.com/search?tbm=isch&q=Peter%20Pan's%20Flight%20Disneyland%20Paris" target="_blank" aria-label="Fotos de Peter Pan's Flight"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Dlp_peter_pan.jpg/500px-Dlp_peter_pan.jpg" alt="" loading="lazy"><span>Fotos</span></a>
           </span>
         </li>
-        <li class="ride">
-          <span class="land">Fantasyland</span>
-          <span class="body">
-            <span>
-              <b>It's a Small World<span class="tag fam">família</span></b>
-              <p>Barco colorido com bonecos de vários países cantando. Clássico calmo para todas as idades.</p>
-              <span class="links">
-                <a class="more" href="https://www.disneylandparis.com/en-int/attractions/disneyland-park/its-a-small-world/" target="_blank">Site oficial</a>
-                <a class="more" href="https://www.google.com/search?tbm=isch&q=It's%20a%20Small%20World%20Disneyland%20Paris" target="_blank">Fotos</a>
-              </span>
-            </span>
-            <a class="ph" href="https://www.google.com/search?tbm=isch&q=It's%20a%20Small%20World%20Disneyland%20Paris" target="_blank" aria-label="Fotos de It's a Small World"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/It%27s_a_Small_World_logo.svg/500px-It%27s_a_Small_World_logo.svg.png" alt="" loading="lazy"><span>Fotos</span></a>
-          </span>
-        </li>
-        <li class="ride">
-          <span class="land">Fantasyland</span>
-          <span class="body">
-            <span>
-              <b>Mad Hatter's Tea Cups<span class="tag fam">família</span></b>
-              <p>As xícaras giratórias do Chapeleiro Maluco. Gire o volante no meio para acelerar a loucura.</p>
-              <span class="links">
-                <a class="more" href="https://www.disneylandparis.com/en-int/attractions/disneyland-park/mad-hatters-tea-cups/" target="_blank">Site oficial</a>
-                <a class="more" href="https://www.google.com/search?tbm=isch&q=Mad%20Hatter's%20Tea%20Cups%20Disneyland%20Paris" target="_blank">Fotos</a>
-              </span>
-            </span>
-            <a class="ph" href="https://www.google.com/search?tbm=isch&q=Mad%20Hatter's%20Tea%20Cups%20Disneyland%20Paris" target="_blank" aria-label="Fotos de Mad Hatter's Tea Cups"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/TeacupsMadTeaParty_wb.jpg/500px-TeacupsMadTeaParty_wb.jpg" alt="" loading="lazy"><span>Fotos</span></a>
-          </span>
-        </li>
-        <li class="ride">
-          <span class="land">Fantasyland</span>
-          <span class="body">
-            <span>
-              <b>Dumbo the Flying Elephant<span class="tag fam">família</span></b>
-              <p>Voo suave no elefante voador, com vista do castelo. Ótimo para fotos do alto.</p>
-              <span class="links">
-                <a class="more" href="https://www.disneylandparis.com/en-int/attractions/disneyland-park/dumbo-the-flying-elephant/" target="_blank">Site oficial</a>
-                <a class="more" href="https://www.google.com/search?tbm=isch&q=Dumbo%20the%20Flying%20Elephant%20Disneyland%20Paris" target="_blank">Fotos</a>
-              </span>
-            </span>
-            <a class="ph" href="https://www.google.com/search?tbm=isch&q=Dumbo%20the%20Flying%20Elephant%20Disneyland%20Paris" target="_blank" aria-label="Fotos de Dumbo the Flying Elephant"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Dumbo_the_Flying_Elephant_logo.svg/500px-Dumbo_the_Flying_Elephant_logo.svg.png" alt="" loading="lazy"><span>Fotos</span></a>
-          </span>
-        </li>
-        <li class="ride">
-          <span class="land">Fantasyland</span>
-          <span class="body">
-            <span>
-              <b>Snow White and the Seven Dwarfs<span class="tag fam">família</span></b>
-              <p>Passeio escuro contando a história da Branca de Neve. Tem sustos leves no meio da escuridão.</p>
-              <span class="links">
-                <a class="more" href="https://www.disneylandparis.com/en-int/attractions/disneyland-park/snow-white-and-the-seven-dwarfs/" target="_blank">Site oficial</a>
-                <a class="more" href="https://www.google.com/search?tbm=isch&q=Snow%20White%20Seven%20Dwarfs%20Disneyland%20Paris" target="_blank">Fotos</a>
-              </span>
-            </span>
-            <a class="ph" href="https://www.google.com/search?tbm=isch&q=Snow%20White%20Seven%20Dwarfs%20Disneyland%20Paris" target="_blank" aria-label="Fotos de Snow White and the Seven Dwarfs"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Snow_White_at_Disneyland_Paris_%282009%29.jpg/500px-Snow_White_at_Disneyland_Paris_%282009%29.jpg" alt="" loading="lazy"><span>Fotos</span></a>
-          </span>
-        </li>
-        <li class="ride">
-          <span class="land">Fantasyland</span>
-          <span class="body">
-            <span>
-              <b>Alice's Curious Labyrinth<span class="tag fam">família</span></b>
-              <p>Labirinto a pé do País das Maravilhas, terminando no castelo da Rainha de Copas com vista do parque.</p>
-              <span class="links">
-                <a class="more" href="https://www.disneylandparis.com/en-int/attractions/disneyland-park/alices-curious-labyrinth/" target="_blank">Site oficial</a>
-                <a class="more" href="https://www.google.com/search?tbm=isch&q=Alice's%20Curious%20Labyrinth%20Disneyland%20Paris" target="_blank">Fotos</a>
-              </span>
-            </span>
-            <a class="ph" href="https://www.google.com/search?tbm=isch&q=Alice's%20Curious%20Labyrinth%20Disneyland%20Paris" target="_blank" aria-label="Fotos de Alice's Curious Labyrinth"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Alice%E2%80%99s_Curious_Labyrinth.jpg/500px-Alice%E2%80%99s_Curious_Labyrinth.jpg" alt="" loading="lazy"><span>Fotos</span></a>
-          </span>
-        </li>
-        <li class="ride">
-          <span class="land">Discoveryland</span>
-          <span class="body">
-            <span>
-              <b>Star Wars Hyperspace Mountain<span class="tag thrill">radical</span></b>
-              <p>Space Mountain com tema Star Wars: lançamento no escuro, loop e muita velocidade. A mais intensa do parque.</p>
-              <span class="links">
-                <a class="more" href="https://www.disneylandparis.com/en-int/attractions/disneyland-park/star-wars-hyperspace-mountain/" target="_blank">Site oficial</a>
-                <a class="more" href="https://www.google.com/search?tbm=isch&q=Star%20Wars%20Hyperspace%20Mountain%20Disneyland%20Paris" target="_blank">Fotos</a>
-              </span>
-            </span>
-            <a class="ph" href="https://www.google.com/search?tbm=isch&q=Star%20Wars%20Hyperspace%20Mountain%20Disneyland%20Paris" target="_blank" aria-label="Fotos de Star Wars Hyperspace Mountain"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8a/Space_Mountain_Mission_2.jpg/500px-Space_Mountain_Mission_2.jpg" alt="" loading="lazy"><span>Fotos</span></a>
-          </span>
-        </li>
-        <li class="ride">
-          <span class="land">Discoveryland</span>
+<li class="ride">
+          <span class="rhead"><span class="tickwrap"><input type="checkbox" id="dr4"></span><span class="land">Discoveryland</span></span>
           <span class="body">
             <span>
               <b>Star Tours: The Adventures Continue<span class="tag must">imperdível</span></b>
@@ -844,36 +738,8 @@ button.util:hover{background:var(--ink);color:var(--paper)}
             <a class="ph" href="https://www.google.com/search?tbm=isch&q=Star%20Tours%20Disneyland%20Paris" target="_blank" aria-label="Fotos de Star Tours"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Star_Tours_logo.svg/500px-Star_Tours_logo.svg.png" alt="" loading="lazy"><span>Fotos</span></a>
           </span>
         </li>
-        <li class="ride">
-          <span class="land">Discoveryland</span>
-          <span class="body">
-            <span>
-              <b>Buzz Lightyear Laser Blast<span class="tag fam">família</span></b>
-              <p>Atire nos alvos com laser e dispute pontos. Ideal para a turma competir e ver quem pontua mais.</p>
-              <span class="links">
-                <a class="more" href="https://www.disneylandparis.com/en-int/attractions/disneyland-park/buzz-lightyear-laser-blast/" target="_blank">Site oficial</a>
-                <a class="more" href="https://www.google.com/search?tbm=isch&q=Buzz%20Lightyear%20Laser%20Blast%20Disneyland%20Paris" target="_blank">Fotos</a>
-              </span>
-            </span>
-            <a class="ph" href="https://www.google.com/search?tbm=isch&q=Buzz%20Lightyear%20Laser%20Blast%20Disneyland%20Paris" target="_blank" aria-label="Fotos de Buzz Lightyear Laser Blast"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Buzz_Lightyear%27s_Space_Ranger_Spin_logo.svg/500px-Buzz_Lightyear%27s_Space_Ranger_Spin_logo.svg.png" alt="" loading="lazy"><span>Fotos</span></a>
-          </span>
-        </li>
-        <li class="ride">
-          <span class="land">Discoveryland</span>
-          <span class="body">
-            <span>
-              <b>Orbitron<span class="tag fam">família</span></b>
-              <p>Carrossel de foguetes que sobem e giram. Fica lindo à noite, todo iluminado.</p>
-              <span class="links">
-                <a class="more" href="https://www.disneylandparis.com/en-int/attractions/disneyland-park/orbitron/" target="_blank">Site oficial</a>
-                <a class="more" href="https://www.google.com/search?tbm=isch&q=Orbitron%20Disneyland%20Paris" target="_blank">Fotos</a>
-              </span>
-            </span>
-            <a class="ph" href="https://www.google.com/search?tbm=isch&q=Orbitron%20Disneyland%20Paris" target="_blank" aria-label="Fotos do Orbitron"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/HKDL_Tomorrowland_Orbitron_2007.jpg/500px-HKDL_Tomorrowland_Orbitron_2007.jpg" alt="" loading="lazy"><span>Fotos</span></a>
-          </span>
-        </li>
-        <li class="ride">
-          <span class="land">Walt Disney Studios</span>
+<li class="ride">
+          <span class="rhead"><span class="tickwrap"><input type="checkbox" id="dr5"></span><span class="land">Walt Disney Studios</span></span>
           <span class="body">
             <span>
               <b>Crush's Coaster<span class="tag must">imperdível</span></b>
@@ -886,8 +752,8 @@ button.util:hover{background:var(--ink);color:var(--paper)}
             <a class="ph" href="https://www.google.com/search?tbm=isch&q=Crush's%20Coaster%20Disneyland%20Paris" target="_blank" aria-label="Fotos de Crush's Coaster"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Crush%E2%80%99s_Coaster%2C_Worlds_of_Pixar%2C_Disney_Adventure_World%2C_Disneyland_Paris.jpg/500px-Crush%E2%80%99s_Coaster%2C_Worlds_of_Pixar%2C_Disney_Adventure_World%2C_Disneyland_Paris.jpg" alt="" loading="lazy"><span>Fotos</span></a>
           </span>
         </li>
-        <li class="ride">
-          <span class="land">Walt Disney Studios</span>
+<li class="ride">
+          <span class="rhead"><span class="tickwrap"><input type="checkbox" id="dr6"></span><span class="land">Walt Disney Studios</span></span>
           <span class="body">
             <span>
               <b>Ratatouille: The Adventure<span class="tag must">imperdível</span></b>
@@ -900,8 +766,37 @@ button.util:hover{background:var(--ink);color:var(--paper)}
             <a class="ph" href="https://www.google.com/search?tbm=isch&q=Ratatouille%20The%20Adventure%20Disneyland%20Paris" target="_blank" aria-label="Fotos de Ratatouille: The Adventure"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/02/Ratatouille%2C_L%27Aventure_Totalement_Toqu%C3%A9e_de_R%C3%A9my.jpg/500px-Ratatouille%2C_L%27Aventure_Totalement_Toqu%C3%A9e_de_R%C3%A9my.jpg" alt="" loading="lazy"><span>Fotos</span></a>
           </span>
         </li>
-        <li class="ride">
-          <span class="land">Walt Disney Studios</span>
+<li class="ride-group thrill">Radicais</li>
+<li class="ride">
+          <span class="rhead"><span class="tickwrap"><input type="checkbox" id="dr7"></span><span class="land">Adventureland</span></span>
+          <span class="body">
+            <span>
+              <b>Indiana Jones™ and the Temple of Peril<span class="tag thrill">radical</span></b>
+              <p>Montanha-russa com loop a céu aberto inspirada no templo de Indy. Curta, mas com adrenalina.</p>
+              <span class="links">
+                <a class="more" href="https://www.disneylandparis.com/en-int/attractions/disneyland-park/indiana-jones-and-the-temple-of-peril/" target="_blank">Site oficial</a>
+                <a class="more" href="https://www.google.com/search?tbm=isch&q=Indiana%20Jones%20Temple%20of%20Peril%20Disneyland%20Paris" target="_blank">Fotos</a>
+              </span>
+            </span>
+            <a class="ph" href="https://www.google.com/search?tbm=isch&q=Indiana%20Jones%20Temple%20of%20Peril%20Disneyland%20Paris" target="_blank" aria-label="Fotos de Indiana Jones and the Temple of Peril"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/IndianaJones-DLRP-enter.JPG/500px-IndianaJones-DLRP-enter.JPG" alt="" loading="lazy"><span>Fotos</span></a>
+          </span>
+        </li>
+<li class="ride">
+          <span class="rhead"><span class="tickwrap"><input type="checkbox" id="dr8"></span><span class="land">Discoveryland</span></span>
+          <span class="body">
+            <span>
+              <b>Star Wars Hyperspace Mountain<span class="tag thrill">radical</span></b>
+              <p>Space Mountain com tema Star Wars: lançamento no escuro, loop e muita velocidade. A mais intensa do parque.</p>
+              <span class="links">
+                <a class="more" href="https://www.disneylandparis.com/en-int/attractions/disneyland-park/star-wars-hyperspace-mountain/" target="_blank">Site oficial</a>
+                <a class="more" href="https://www.google.com/search?tbm=isch&q=Star%20Wars%20Hyperspace%20Mountain%20Disneyland%20Paris" target="_blank">Fotos</a>
+              </span>
+            </span>
+            <a class="ph" href="https://www.google.com/search?tbm=isch&q=Star%20Wars%20Hyperspace%20Mountain%20Disneyland%20Paris" target="_blank" aria-label="Fotos de Star Wars Hyperspace Mountain"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8a/Space_Mountain_Mission_2.jpg/500px-Space_Mountain_Mission_2.jpg" alt="" loading="lazy"><span>Fotos</span></a>
+          </span>
+        </li>
+<li class="ride">
+          <span class="rhead"><span class="tickwrap"><input type="checkbox" id="dr9"></span><span class="land">Walt Disney Studios</span></span>
           <span class="body">
             <span>
               <b>The Twilight Zone Tower of Terror<span class="tag thrill">radical</span></b>
@@ -914,8 +809,8 @@ button.util:hover{background:var(--ink);color:var(--paper)}
             <a class="ph" href="https://www.google.com/search?tbm=isch&q=Tower%20of%20Terror%20Disneyland%20Paris" target="_blank" aria-label="Fotos da Tower of Terror"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/The_Twilight_Zone_Tower_of_Terror_-_Walt_Disney_Studios_Park_sign.jpg/500px-The_Twilight_Zone_Tower_of_Terror_-_Walt_Disney_Studios_Park_sign.jpg" alt="" loading="lazy"><span>Fotos</span></a>
           </span>
         </li>
-        <li class="ride">
-          <span class="land">Walt Disney Studios</span>
+<li class="ride">
+          <span class="rhead"><span class="tickwrap"><input type="checkbox" id="dr10"></span><span class="land">Walt Disney Studios</span></span>
           <span class="body">
             <span>
               <b>Avengers Assemble: Flight Force<span class="tag thrill">radical</span></b>
@@ -928,8 +823,121 @@ button.util:hover{background:var(--ink);color:var(--paper)}
             <a class="ph" href="https://www.google.com/search?tbm=isch&q=Avengers%20Assemble%20Flight%20Force%20Disneyland%20Paris" target="_blank" aria-label="Fotos de Avengers Assemble: Flight Force"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/AvengersAssemble-FlightForce_entrance.jpg/500px-AvengersAssemble-FlightForce_entrance.jpg" alt="" loading="lazy"><span>Fotos</span></a>
           </span>
         </li>
-        <li class="ride">
-          <span class="land">Walt Disney Studios</span>
+<li class="ride-group fam">Família</li>
+<li class="ride">
+          <span class="rhead"><span class="tickwrap"><input type="checkbox" id="dr11"></span><span class="land">Frontierland</span></span>
+          <span class="body">
+            <span>
+              <b>Phantom Manor<span class="tag fam">família</span></b>
+              <p>Mansão mal-assombrada com história própria (a família Ravenswood) e trilha sonora arrepiante.</p>
+              <span class="links">
+                <a class="more" href="https://www.disneylandparis.com/en-int/attractions/disneyland-park/phantom-manor/" target="_blank">Site oficial</a>
+                <a class="more" href="https://www.google.com/search?tbm=isch&q=Phantom%20Manor%20Disneyland%20Paris" target="_blank">Fotos</a>
+              </span>
+            </span>
+            <a class="ph" href="https://www.google.com/search?tbm=isch&q=Phantom%20Manor%20Disneyland%20Paris" target="_blank" aria-label="Fotos de Phantom Manor"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/Phantom_Manor_View.jpg/500px-Phantom_Manor_View.jpg" alt="" loading="lazy"><span>Fotos</span></a>
+          </span>
+        </li>
+<li class="ride">
+          <span class="rhead"><span class="tickwrap"><input type="checkbox" id="dr12"></span><span class="land">Fantasyland</span></span>
+          <span class="body">
+            <span>
+              <b>It's a Small World<span class="tag fam">família</span></b>
+              <p>Barco colorido com bonecos de vários países cantando. Clássico calmo para todas as idades.</p>
+              <span class="links">
+                <a class="more" href="https://www.disneylandparis.com/en-int/attractions/disneyland-park/its-a-small-world/" target="_blank">Site oficial</a>
+                <a class="more" href="https://www.google.com/search?tbm=isch&q=It's%20a%20Small%20World%20Disneyland%20Paris" target="_blank">Fotos</a>
+              </span>
+            </span>
+            <a class="ph" href="https://www.google.com/search?tbm=isch&q=It's%20a%20Small%20World%20Disneyland%20Paris" target="_blank" aria-label="Fotos de It's a Small World"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/It%27s_a_Small_World_logo.svg/500px-It%27s_a_Small_World_logo.svg.png" alt="" loading="lazy"><span>Fotos</span></a>
+          </span>
+        </li>
+<li class="ride">
+          <span class="rhead"><span class="tickwrap"><input type="checkbox" id="dr13"></span><span class="land">Fantasyland</span></span>
+          <span class="body">
+            <span>
+              <b>Mad Hatter's Tea Cups<span class="tag fam">família</span></b>
+              <p>As xícaras giratórias do Chapeleiro Maluco. Gire o volante no meio para acelerar a loucura.</p>
+              <span class="links">
+                <a class="more" href="https://www.disneylandparis.com/en-int/attractions/disneyland-park/mad-hatters-tea-cups/" target="_blank">Site oficial</a>
+                <a class="more" href="https://www.google.com/search?tbm=isch&q=Mad%20Hatter's%20Tea%20Cups%20Disneyland%20Paris" target="_blank">Fotos</a>
+              </span>
+            </span>
+            <a class="ph" href="https://www.google.com/search?tbm=isch&q=Mad%20Hatter's%20Tea%20Cups%20Disneyland%20Paris" target="_blank" aria-label="Fotos de Mad Hatter's Tea Cups"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/TeacupsMadTeaParty_wb.jpg/500px-TeacupsMadTeaParty_wb.jpg" alt="" loading="lazy"><span>Fotos</span></a>
+          </span>
+        </li>
+<li class="ride">
+          <span class="rhead"><span class="tickwrap"><input type="checkbox" id="dr14"></span><span class="land">Fantasyland</span></span>
+          <span class="body">
+            <span>
+              <b>Dumbo the Flying Elephant<span class="tag fam">família</span></b>
+              <p>Voo suave no elefante voador, com vista do castelo. Ótimo para fotos do alto.</p>
+              <span class="links">
+                <a class="more" href="https://www.disneylandparis.com/en-int/attractions/disneyland-park/dumbo-the-flying-elephant/" target="_blank">Site oficial</a>
+                <a class="more" href="https://www.google.com/search?tbm=isch&q=Dumbo%20the%20Flying%20Elephant%20Disneyland%20Paris" target="_blank">Fotos</a>
+              </span>
+            </span>
+            <a class="ph" href="https://www.google.com/search?tbm=isch&q=Dumbo%20the%20Flying%20Elephant%20Disneyland%20Paris" target="_blank" aria-label="Fotos de Dumbo the Flying Elephant"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Dumbo_the_Flying_Elephant_logo.svg/500px-Dumbo_the_Flying_Elephant_logo.svg.png" alt="" loading="lazy"><span>Fotos</span></a>
+          </span>
+        </li>
+<li class="ride">
+          <span class="rhead"><span class="tickwrap"><input type="checkbox" id="dr15"></span><span class="land">Fantasyland</span></span>
+          <span class="body">
+            <span>
+              <b>Snow White and the Seven Dwarfs<span class="tag fam">família</span></b>
+              <p>Passeio escuro contando a história da Branca de Neve. Tem sustos leves no meio da escuridão.</p>
+              <span class="links">
+                <a class="more" href="https://www.disneylandparis.com/en-int/attractions/disneyland-park/snow-white-and-the-seven-dwarfs/" target="_blank">Site oficial</a>
+                <a class="more" href="https://www.google.com/search?tbm=isch&q=Snow%20White%20Seven%20Dwarfs%20Disneyland%20Paris" target="_blank">Fotos</a>
+              </span>
+            </span>
+            <a class="ph" href="https://www.google.com/search?tbm=isch&q=Snow%20White%20Seven%20Dwarfs%20Disneyland%20Paris" target="_blank" aria-label="Fotos de Snow White and the Seven Dwarfs"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Snow_White_at_Disneyland_Paris_%282009%29.jpg/500px-Snow_White_at_Disneyland_Paris_%282009%29.jpg" alt="" loading="lazy"><span>Fotos</span></a>
+          </span>
+        </li>
+<li class="ride">
+          <span class="rhead"><span class="tickwrap"><input type="checkbox" id="dr16"></span><span class="land">Fantasyland</span></span>
+          <span class="body">
+            <span>
+              <b>Alice's Curious Labyrinth<span class="tag fam">família</span></b>
+              <p>Labirinto a pé do País das Maravilhas, terminando no castelo da Rainha de Copas com vista do parque.</p>
+              <span class="links">
+                <a class="more" href="https://www.disneylandparis.com/en-int/attractions/disneyland-park/alices-curious-labyrinth/" target="_blank">Site oficial</a>
+                <a class="more" href="https://www.google.com/search?tbm=isch&q=Alice's%20Curious%20Labyrinth%20Disneyland%20Paris" target="_blank">Fotos</a>
+              </span>
+            </span>
+            <a class="ph" href="https://www.google.com/search?tbm=isch&q=Alice's%20Curious%20Labyrinth%20Disneyland%20Paris" target="_blank" aria-label="Fotos de Alice's Curious Labyrinth"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Alice%E2%80%99s_Curious_Labyrinth.jpg/500px-Alice%E2%80%99s_Curious_Labyrinth.jpg" alt="" loading="lazy"><span>Fotos</span></a>
+          </span>
+        </li>
+<li class="ride">
+          <span class="rhead"><span class="tickwrap"><input type="checkbox" id="dr17"></span><span class="land">Discoveryland</span></span>
+          <span class="body">
+            <span>
+              <b>Buzz Lightyear Laser Blast<span class="tag fam">família</span></b>
+              <p>Atire nos alvos com laser e dispute pontos. Ideal para a turma competir e ver quem pontua mais.</p>
+              <span class="links">
+                <a class="more" href="https://www.disneylandparis.com/en-int/attractions/disneyland-park/buzz-lightyear-laser-blast/" target="_blank">Site oficial</a>
+                <a class="more" href="https://www.google.com/search?tbm=isch&q=Buzz%20Lightyear%20Laser%20Blast%20Disneyland%20Paris" target="_blank">Fotos</a>
+              </span>
+            </span>
+            <a class="ph" href="https://www.google.com/search?tbm=isch&q=Buzz%20Lightyear%20Laser%20Blast%20Disneyland%20Paris" target="_blank" aria-label="Fotos de Buzz Lightyear Laser Blast"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Buzz_Lightyear%27s_Space_Ranger_Spin_logo.svg/500px-Buzz_Lightyear%27s_Space_Ranger_Spin_logo.svg.png" alt="" loading="lazy"><span>Fotos</span></a>
+          </span>
+        </li>
+<li class="ride">
+          <span class="rhead"><span class="tickwrap"><input type="checkbox" id="dr18"></span><span class="land">Discoveryland</span></span>
+          <span class="body">
+            <span>
+              <b>Orbitron<span class="tag fam">família</span></b>
+              <p>Carrossel de foguetes que sobem e giram. Fica lindo à noite, todo iluminado.</p>
+              <span class="links">
+                <a class="more" href="https://www.disneylandparis.com/en-int/attractions/disneyland-park/orbitron/" target="_blank">Site oficial</a>
+                <a class="more" href="https://www.google.com/search?tbm=isch&q=Orbitron%20Disneyland%20Paris" target="_blank">Fotos</a>
+              </span>
+            </span>
+            <a class="ph" href="https://www.google.com/search?tbm=isch&q=Orbitron%20Disneyland%20Paris" target="_blank" aria-label="Fotos do Orbitron"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/HKDL_Tomorrowland_Orbitron_2007.jpg/500px-HKDL_Tomorrowland_Orbitron_2007.jpg" alt="" loading="lazy"><span>Fotos</span></a>
+          </span>
+        </li>
+<li class="ride">
+          <span class="rhead"><span class="tickwrap"><input type="checkbox" id="dr19"></span><span class="land">Walt Disney Studios</span></span>
           <span class="body">
             <span>
               <b>Spider-Man W.E.B. Adventure<span class="tag fam">família</span></b>
@@ -942,8 +950,8 @@ button.util:hover{background:var(--ink);color:var(--paper)}
             <a class="ph" href="https://www.google.com/search?tbm=isch&q=Spider-Man%20W.E.B.%20Adventure%20Disneyland%20Paris" target="_blank" aria-label="Fotos de Spider-Man W.E.B. Adventure"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Web_Slingers_A_Spider-Man_Adventure_at_Disney_California_Adventure_1_2023-06-03.jpeg/500px-Web_Slingers_A_Spider-Man_Adventure_at_Disney_California_Adventure_1_2023-06-03.jpeg" alt="" loading="lazy"><span>Fotos</span></a>
           </span>
         </li>
-        <li class="ride">
-          <span class="land">Walt Disney Studios</span>
+<li class="ride">
+          <span class="rhead"><span class="tickwrap"><input type="checkbox" id="dr20"></span><span class="land">Walt Disney Studios</span></span>
           <span class="body">
             <span>
               <b>RC Racer<span class="tag fam">família</span></b>
@@ -956,8 +964,8 @@ button.util:hover{background:var(--ink);color:var(--paper)}
             <a class="ph" href="https://www.google.com/search?tbm=isch&q=RC%20Racer%20Disneyland%20Paris" target="_blank" aria-label="Fotos de RC Racer"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/RC_Racer_Disneyland_Paris.jpg/500px-RC_Racer_Disneyland_Paris.jpg" alt="" loading="lazy"><span>Fotos</span></a>
           </span>
         </li>
-        <li class="ride">
-          <span class="land">Walt Disney Studios</span>
+<li class="ride">
+          <span class="rhead"><span class="tickwrap"><input type="checkbox" id="dr21"></span><span class="land">Walt Disney Studios</span></span>
           <span class="body">
             <span>
               <b>Toy Soldiers Parachute Drop<span class="tag fam">família</span></b>
@@ -969,8 +977,7 @@ button.util:hover{background:var(--ink);color:var(--paper)}
             </span>
             <a class="ph" href="https://www.google.com/search?tbm=isch&q=Toy%20Soldiers%20Parachute%20Drop%20Disneyland%20Paris" target="_blank" aria-label="Fotos de Toy Soldiers Parachute Drop"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Toy_Soldiers_Parachute_Drop.jpg/500px-Toy_Soldiers_Parachute_Drop.jpg" alt="" loading="lazy"><span>Fotos</span></a>
           </span>
-        </li>
-      </ul>
+        </li></ul>
     </div>
     </div></div>
   </article>
@@ -1301,7 +1308,7 @@ if(exp) {
 const res = document.getElementById("reset");
 if(res) {
   res.addEventListener("click", () => {
-    if(confirm("Apagar marcações?")) { done={}; try{ localStorage.removeItem(KEY); }catch(e){} paint(); }
+    if(confirm("Apagar marcações?")) { done={}; disneyDone={}; try{ localStorage.removeItem(KEY); localStorage.removeItem(KEY_DISNEY); }catch(e){} paint(); paintDisney(); }
   });
 }
 
@@ -1407,6 +1414,9 @@ if(copyBtn){
       const label = date ? date.textContent.trim() : "";
       lines.push(`${label}: ${dh}/${dt} paradas`);
     });
+    const ddt = document.querySelectorAll(".ride").length;
+    const ddh = document.querySelectorAll(".ride.done").length;
+    lines.push("Disney: " + ddh + "/" + ddt + " atrações");
     lines.push("", "TOTAL: " + ($("#tally") ? $("#tally").textContent : ""));
     const txt = lines.join("\n");
     try{
@@ -1443,6 +1453,48 @@ $$("img").forEach(im => {
 })();
 
 paint();
+
+/* Contador de progresso da Disney (independente das 100 paradas) */
+const KEY_DISNEY="roteiro-set-2026-disney";
+let disneyDone={};
+try{ disneyDone = JSON.parse(localStorage.getItem(KEY_DISNEY)||"{}") || {}; }catch(e){ disneyDone={}; }
+function saveDisney(){ try{ localStorage.setItem(KEY_DISNEY, JSON.stringify(disneyDone)); }catch(e){} }
+
+function paintDisney(){
+  let dt=0, dh=0;
+  document.querySelectorAll(".ride").forEach((r, i) => {
+    const box = r.querySelector("input[type=checkbox]");
+    if(box){
+      dt++;
+      box.checked = !!disneyDone[i];
+      r.classList.toggle("done", box.checked);
+      if(box.checked) dh++;
+    }
+  });
+  const pct = dt ? Math.round((dh/dt)*100) : 0;
+  const c = document.getElementById("disneyCount");
+  if(c){ c.textContent = dh + "/" + dt + " · " + pct + "%"; c.classList.toggle("full", dh===dt && dt>0); }
+}
+
+document.addEventListener("change", e => {
+  if(e.target.matches(".ride input[type=checkbox]")){
+    const r = e.target.closest(".ride");
+    const i = Array.from(document.querySelectorAll(".ride")).indexOf(r);
+    if(e.target.checked) disneyDone[i] = 1; else delete disneyDone[i];
+    saveDisney();
+    paintDisney();
+  }
+});
+
+document.addEventListener("click", e => {
+  const ride = e.target.closest(".ride");
+  if(!ride) return;
+  if(e.target.closest("a") || e.target.closest("input") || e.target.closest("button")) return;
+  const box = ride.querySelector("input[type=checkbox]");
+  if(box && !box.disabled){ box.checked = !box.checked; box.dispatchEvent(new Event("change", {bubbles:true})); }
+});
+
+paintDisney();
 </script>
 </body>
 </html>
